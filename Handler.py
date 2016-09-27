@@ -11,14 +11,16 @@ class Handler:
 
     def somatorioEATML(self):
         # print("Somatorio")
+        print(len(self.atomos))
         for i in range(len(self.atomos)):
             self.energiatotal += self.eatl_dic[self.atomos[i]] * self.qtd[i]
         # print("Energia total: " + format(self.energiatotal))
         return self.energiatotal
 
     def somatorioECRYS(self):
-        print("SomatorioECRYS")
+        print("SomatorioECRYS" + format(len(self.atomos)))
         for i in range(len(self.atomos)):
+            print(self.atomos)
             self.energiaCristalina += self.energiaCristalina_dic[self.atomos[i]] * self.qtd[i]
         # print("Energia total: " + format(self.energiatotal))
         return self.energiaCristalina

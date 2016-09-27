@@ -23,6 +23,7 @@ class Interface:
     def __init__(self): # Inicializacão da interface do programa
 
         self.raiz = Tk()
+        print("formação".upper())
         self.raiz.title("Calculadora CeF 1.1")
         self.raiz.geometry("650x800")  # Tamanho da janela
         self.raiz.resizable(width=False, height=False)  # Se a janela pode ser redimencionada
@@ -39,7 +40,7 @@ class Interface:
         self.qtd_atomos = Entry()
         self.adc_entrada_atomo = Button(self.raiz, text="+", command=self.adc)
         self.botaoCalcularEC = Button(self.raiz, text="Calcular Energia de Coesão", command=self.calculaEC, state=DISABLED)
-        self.botaoCalcularEF = Button(self.raiz, text="Calcular Energia de Formacao", command=self.calculaEF, state=DISABLED)
+        self.botaoCalcularEF = Button(self.raiz, text="Calcular Energia de formação", command=self.calculaEF, state=DISABLED)
         self.n_atomos_desc = Label(self.raiz, text="Adicioinar")
         self.escolher_arquivo = Button(self.raiz, text="Abrir arquivo", command=self.escolherArquivo)
 
@@ -57,14 +58,14 @@ class Interface:
             #print(self.arquivo)
             if len(self.volume) > 0 and self.ef:
                 self.arquivo.write("VOLUME" + "         " + "ENERGIA" + "           " +
-                                   "ENERGIA DE FORMACAO\n\n")
+                                   "ENERGIA DE FORMAÇÃO\n\n")
                 for i in range(len(self.resultado)):
                     self.arquivo.write(str(self.volume[i]) + "       " + str(self.energia[i]) + "        " +
                                        str(self.resultado[i]) + "\n")
                 self.arquivo.close()
             elif self.ec:
                 self.arquivo.write("VOLUME" + "         " + "ENERGIA" + "           " +
-                                   "ENERGIA DE Coesão\n\n")
+                                   "ENERGIA DE COESÃO\n\n")
                 for i in range(len(self.resultado)):
                     self.arquivo.write(str(self.volume[i]) + "       " + str(self.energia[i]) + "        " +
                                        str(self.resultado[i]) + "\n")
@@ -94,8 +95,8 @@ class Interface:
             if len(self.resultado) > 0 and len(self.volume) == len(self.resultado):
                 # self.resultado = sorted(self.resultado)
                 # self.volume = sorted(self.volume)
-                plt.title("Calculo de energia de formacão")
-                plt.xlabel("Energia de formacão")
+                plt.title("Calculo de energia de formação")
+                plt.xlabel("Energia de formação")
                 plt.ylabel("Volume")
                 # plt.plot(self.volume, self.resultado)
                 plt.scatter(self.volume, self.resultado, color='r')
@@ -179,8 +180,8 @@ class Interface:
         self.botaoCalcularEC.grid(row=r, column=4)
         r += 1
         self.botaoCalcularEF.grid(row=r, column=4)
-        self.qtd_atomos.grid_remove()
-        self.adc_entrada_atomo.grid_remove()
+        self.qtd_atomos.configure(state=DISABLED)
+        self.adc_entrada_atomo.configure(state=DISABLED)
         self.entry_desc.config(text="Espécie atômica")
         self.n_atomos_desc.config(text="Número de átomos")
 
@@ -209,7 +210,7 @@ class Interface:
         try:
             for i in range(len(self.atomo)):
                 entrada_atomos.append(self.atomo[i].get().capitalize())
-                x = self.n_atomos[i].get().split()
+                x = self.n_atomos[i].get()
                 numero_atomos.append(int(x))
         except:
             messagebox._show("Erro", "Adicione as espécies atomicas e a"
