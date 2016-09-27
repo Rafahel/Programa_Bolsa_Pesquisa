@@ -5,7 +5,6 @@ from tkinter.filedialog import askopenfile
 from tkinter import messagebox
 import matplotlib.pyplot as plt
 
-
 #  Esta interface foi criada utilizando o Módulo tkinter, o programa asseguir serve para realizar os
 #  calculos de energia de coesão e formacão.
 #  Criado por Rafahel Mello aluno de Ciência da computacão da Universidade Regional Integrada de Santo Ângelo
@@ -14,7 +13,7 @@ class Interface:
         self.raiz = Tk()
         self.raiz.title("Calculadora CeF 1.1")
         self.raiz.geometry("650x800")  # Tamanho da janela
-        self.raiz.resizable(width=False, height=False)  # Se a janela pode ser redimencionada
+        self.raiz.resizable(width=False, height=True)  # Se a janela pode ser redimencionada
         self.titulo = Label(self.raiz, text="Calculadora CeF 1.1",
                             font=('Times New Roman', 25, 'bold'))
         self.entry_desc = Label(self.raiz, text="Entre com numero de especies atomicas")
@@ -126,14 +125,15 @@ class Interface:
 
     def adc(self):  # Método necessário para adicionar entradas de texto para serem adicionados os atomos.
         try:
-            x = int(self.qtd_atomos.get())
-            r = 3
-            if x > 100 or x < 0:
+            qtdAtomos = int(self.qtd_atomos.get())  # número de especies de atomos digitados
+            r = 3  # row para ajustar os widgets na grid
+            if qtdAtomos > 100 or qtdAtomos <= 0:
+                messagebox._show("Erro", "A quantidade de espécies atomicas deve ser entre 1 e 100.")
                 return
-            for i in range(x):
+            for i in range(qtdAtomos):
                 self.atomo.append(Entry(self.raiz))
                 self.n_atomos.append(Entry(self.raiz))
-            for i in range(x):
+            for i in range(qtdAtomos):
                 self.atomo[i].grid(row=r, column=0)
                 self.n_atomos[i].grid(row=r, column=2)
                 r += 1
