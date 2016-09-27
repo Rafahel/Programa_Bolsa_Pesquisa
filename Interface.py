@@ -178,6 +178,7 @@ class Interface:
                                      " quantidade para cada um deles")
         self.iniciaEF(entrada_atomos, numero_atomos)
 
-gui = Interface()
+if __name__ == '__main__':
+    gui = Interface()
 
 
