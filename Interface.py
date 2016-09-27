@@ -180,8 +180,10 @@ class Interface:
         self.botaoCalcularEC.grid(row=r, column=4)
         r += 1
         self.botaoCalcularEF.grid(row=r, column=4)
-        self.qtd_atomos.configure(state=DISABLED)
-        self.adc_entrada_atomo.configure(state=DISABLED)
+        # self.qtd_atomos.configure(state=DISABLED)
+        # self.adc_entrada_atomo.configure(state=DISABLED)
+        self.adc_entrada_atomo.grid_remove()
+        self.qtd_atomos.grid_remove()
         self.entry_desc.config(text="Espécie atômica")
         self.n_atomos_desc.config(text="Número de átomos")
 
