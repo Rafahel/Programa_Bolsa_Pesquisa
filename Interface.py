@@ -76,8 +76,8 @@ class Interface:
         if self.ef:
             if len(self.resultado) > 0 and len(self.volume) == len(self.resultado):
                 plt.title("Calculo de energia de formação")
-                plt.xlabel("Energia de formação")
-                plt.ylabel("Volume")
+                plt.xlabel("Volume")
+                plt.ylabel("Energia de formação")
                 plt.scatter(self.volume, self.resultado, color='r')
                 plt.show()
         self.raiz.quit()
