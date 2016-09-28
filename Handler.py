@@ -7,7 +7,7 @@ class Handler:
         self.energiatotal = 0
         self.energiaCristalina = 0
         # Dicionarios de elementos do programa
-        self.eatl_dic = {"Fe": -2545.132813, "N": -109.135600, "F": -8000}
+        self.eatl_dic = {"Fe": -2545.132813, "N": -109.135600, "Fl": -8000}
         self.energiaCristalina_dic = {"Fl": -199.47009291, "Fe": 0}
 
     def somatorioEATML(self):

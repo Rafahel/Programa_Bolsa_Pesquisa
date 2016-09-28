@@ -42,7 +42,10 @@ class Interface:
 
     def geraArquivo(self):  # Método para gerar arquivo com os resultados do cálculo
         try:
-            self.arquivo = open(self.arquivo + "__Resultados" + ".txt", "w")
+            if self.ec:
+                self.arquivo = open(self.arquivo + "__Resultados Coesão" + ".txt", "w")
+            if self.ef:
+                self.arquivo = open(self.arquivo + "__Resultados Formacao" + ".txt", "w")
             if len(self.volume) > 0 and self.ef:
                 self.arquivo.write("VOLUME" + "         " + "ENERGIA" + "           " +
                                    "ENERGIA DE FORMAÇÃO\n\n")
