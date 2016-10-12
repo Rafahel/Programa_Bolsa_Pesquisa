@@ -145,18 +145,6 @@ class Ui_MainWindow(object):
         self.actionSoftware.setText(_translate("MainWindow", "Software", None))
         self.actionProgramador.setText(_translate("MainWindow", "Programador", None))
 
-
-    #
-    # def iniciaThreadEC(self):
-    #     self.t_EC.start()
-    #     self.t_EC.join()
-    #     self.geraGrafico()
-    #
-    # def iniciaThreadEF(self):
-    #     self.t_EF.start()
-    #     self.t_EF.join()
-    #     self.geraGrafico()
-
     def __init__(self):
         '''
         Neste método é inicializado alguns dos atributos do programa, assim como as listas.
