@@ -175,9 +175,15 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                 plt.show()
                 return
 
+
+
+    '''
+            Método para reiniciar as entryboxes e as listas de atomos e numero deles.
+    '''
     def resetaEntradas(self):
         self.listaEntradasDeAtomos[:] = []
         self.listaEntradasNumeroDeAtomos[:] = []
+        return
 
 
 
