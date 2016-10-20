@@ -259,7 +259,7 @@ if __name__ == '__main__':
     palette = QPalette()
     palette.setBrush(QPalette.Background, QBrush(QPixmap("resources/bg.png")))
     app.setPalette(palette)
-    app.setFixedSize(870, 970)
+    app.setFixedSize(870, 971)
     '''
 
         Mostra a janela na tela
