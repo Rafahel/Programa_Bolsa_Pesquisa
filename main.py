@@ -89,7 +89,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                         try:
                             self.energia.append(float(texto[i]))
                         except:
-                            print("Erro no conteudo do arquivo")
+                            print("Erro no conteudo do arquivo.")
             except:
                 print("Erro no arquivo")
                 return
