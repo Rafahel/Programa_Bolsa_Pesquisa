@@ -91,7 +91,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                         except:
                             print("Erro no conteudo do arquivo.")
             except:
-                print("Erro no arquivo")
+                print("Erro no arquivo.")
                 return
         except:
             print("Erro ao abrir arquivo")
