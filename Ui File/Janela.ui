@@ -149,14 +149,14 @@
      </font>
     </property>
     <property name="title">
-     <string>Selecione o método</string>
+     <string>Selecione Parametrização</string>
     </property>
     <widget class="QWidget" name="verticalLayoutWidget_4">
      <property name="geometry">
       <rect>
        <x>40</x>
        <y>20</y>
-       <width>101</width>
+       <width>141</width>
        <height>121</height>
       </rect>
      </property>
@@ -167,21 +167,28 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>MétodoA</string>
+         <string>CCA PBE</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="metodoCalculo_B">
         <property name="text">
-         <string>MétodoB</string>
+         <string>CCA WC</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="metodoCalculo_C">
         <property name="text">
-         <string>MétodoC</string>
+         <string>LSDA</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="metodoCalculo_D">
+        <property name="text">
+         <string>PBE SOL - CCA</string>
         </property>
        </widget>
       </item>
@@ -191,7 +198,7 @@
    <widget class="QLabel" name="resultadoLabel">
     <property name="geometry">
      <rect>
-      <x>320</x>
+      <x>440</x>
       <y>280</y>
       <width>161</width>
       <height>40</height>
@@ -209,10 +216,10 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>260</x>
       <y>320</y>
-      <width>361</width>
-      <height>521</height>
+      <width>501</width>
+      <height>561</height>
      </rect>
     </property>
    </widget>

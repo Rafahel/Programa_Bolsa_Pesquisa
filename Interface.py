@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Janela.ui'
+# Form implementation generated from reading ui file 'janela.ui'
 #
 # Created by: PyQt4 UI code generator 4.11.4
 #
@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         self.groupBox.setFont(font)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayoutWidget_4 = QtGui.QWidget(self.groupBox)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(40, 20, 101, 121))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(40, 20, 141, 121))
         self.verticalLayoutWidget_4.setObjectName(_fromUtf8("verticalLayoutWidget_4"))
         self.verticalLayout_3 = QtGui.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
@@ -97,14 +97,17 @@ class Ui_MainWindow(object):
         self.metodoCalculo_C = QtGui.QRadioButton(self.verticalLayoutWidget_4)
         self.metodoCalculo_C.setObjectName(_fromUtf8("metodoCalculo_C"))
         self.verticalLayout_3.addWidget(self.metodoCalculo_C)
+        self.metodoCalculo_D = QtGui.QRadioButton(self.verticalLayoutWidget_4)
+        self.metodoCalculo_D.setObjectName(_fromUtf8("metodoCalculo_D"))
+        self.verticalLayout_3.addWidget(self.metodoCalculo_D)
         self.resultadoLabel = QtGui.QLabel(self.centralwidget)
-        self.resultadoLabel.setGeometry(QtCore.QRect(320, 280, 161, 40))
+        self.resultadoLabel.setGeometry(QtCore.QRect(440, 280, 161, 40))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.resultadoLabel.setFont(font)
         self.resultadoLabel.setObjectName(_fromUtf8("resultadoLabel"))
         self.textBrowser = QtGui.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(200, 320, 361, 521))
+        self.textBrowser.setGeometry(QtCore.QRect(260, 320, 501, 561))
         self.textBrowser.setObjectName(_fromUtf8("textBrowser"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -126,10 +129,11 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Calculadora CeF", None))
         self.entrada_1Descricao.setText(_translate("MainWindow", "Atomos", None))
         self.entrada_2Descricao.setText(_translate("MainWindow", "Quantidade", None))
-        self.groupBox.setTitle(_translate("MainWindow", "Selecione o método", None))
-        self.metodoCalculo_A.setText(_translate("MainWindow", "MétodoA", None))
-        self.metodoCalculo_B.setText(_translate("MainWindow", "MétodoB", None))
-        self.metodoCalculo_C.setText(_translate("MainWindow", "MétodoC", None))
+        self.groupBox.setTitle(_translate("MainWindow", "Selecione Parametrização", None))
+        self.metodoCalculo_A.setText(_translate("MainWindow", "CCA PBE", None))
+        self.metodoCalculo_B.setText(_translate("MainWindow", "CCA WC", None))
+        self.metodoCalculo_C.setText(_translate("MainWindow", "LSDA", None))
+        self.metodoCalculo_D.setText(_translate("MainWindow", "PBE SOL - CCA", None))
         self.resultadoLabel.setText(_translate("MainWindow", "Resultados", None))
         self.actionSoftware.setText(_translate("MainWindow", "Software", None))
         self.actionProgramador.setText(_translate("MainWindow", "Programador", None))

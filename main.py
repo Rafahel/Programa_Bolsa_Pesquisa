@@ -109,6 +109,8 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
             self.metodoEscolhido = 2
         if self.metodoCalculo_C.isChecked():
             self.metodoEscolhido = 3
+        if self.metodoCalculo_D.isChecked():
+            self.metodoEscolhido = 4
         if self.metodoEscolhido == -1:
             self.msg.setText("AVISO")
             self.msg.setInformativeText("Escolha um método para a realização do cálculo!")
@@ -212,6 +214,9 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
     '''
 
     def geraGrafico(self):
+        self.botao_calculaEnergiaCoesao.setEnabled(False)
+        self.botao_calculaEnergiaFormacao.setEnabled(False)
+        self.botaoBrowseFiles.setEnabled(False)
         if self.ec:
             if len(self.resultado) > 0 and len(self.volume) == len(self.resultado):
                 plt.title("Calculo de energia de coesão")
