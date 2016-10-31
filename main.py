@@ -89,9 +89,9 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                         try:
                             self.energia.append(float(texto[i]))
                         except:
-                            print("Erro no conteudo do arquivo")
+                            print("Erro no conteudo do arquivo.")
             except:
-                print("Erro no arquivo")
+                print("Erro no arquivo.")
                 return
         except:
             print("Erro ao abrir arquivo")
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     palette = QPalette()
     palette.setBrush(QPalette.Background, QBrush(QPixmap("resources/bg.png")))
     app.setPalette(palette)
-    app.setFixedSize(870, 926)
+    app.setFixedSize(870, 970)
     '''
 
         Mostra a janela na tela
