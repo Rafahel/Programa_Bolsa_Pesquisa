@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 from PyQt4.QtGui import *
+
+
 class Handler:
     def __init__(self, atomos, qtd, metodo):
         self.atomos = atomos
