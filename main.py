@@ -6,7 +6,7 @@ from Interface import _fromUtf8
 from PyQt4 import QtCore, QtGui
 from PyQt4.QtGui import *
 import sys
-
+import Polinomio
 
 class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
     def __init__(self, parent=None):
@@ -24,6 +24,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
         self.metodoA = False
         self.metodoB = False
         self.metodoC = False
+        self.metodoD = False
         self.arquivoLeitura = ""
         self.metodoEscolhido = -1
         self.listaEntradasDeAtomos.append(self.lineEdit)
@@ -111,6 +112,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
             self.metodoEscolhido = 3
         if self.metodoCalculo_D.isChecked():
             self.metodoEscolhido = 4
+            print("FLA")
         if self.metodoEscolhido == -1:
             self.msg.setText("AVISO")
             self.msg.setInformativeText("Escolha um método para a realização do cálculo!")
@@ -148,6 +150,8 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
             self.metodoEscolhido = 2
         if self.metodoCalculo_C.isChecked():
             self.metodoEscolhido = 3
+        if self.metodoCalculo_D.isChecked():
+            self.metodoEscolhido = 4
         if self.metodoEscolhido == -1:
             self.msg.setText("AVISO")
             self.msg.setInformativeText("Escolha um método para a realização do cálculo!")
@@ -177,6 +181,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
 
     def geraArquivo(self):
         try:
+            formula = Polinomio.geradorPolinomio(self.volume, self.resultado)
             self.arquivoSaida = open(self.arquivoLeitura + "__Resultados" + ".txt", "w")
             if len(self.volume) > 0 and self.ef:
                 self.arquivoSaida.write("VOLUME" + "         " + "ENERGIA" + "           " +
@@ -188,6 +193,8 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                                             str(self.resultado[i]) + "\n")
                     self.textBrowser.append(str(self.volume[i]) + "       " + str(self.energia[i]) + "        " +
                                             str(self.resultado[i]) + "\n")
+                self.textBrowser.append("\nFORMULA:  " + formula)
+                self.arquivoSaida.write("\nFORMULA:  " + formula)
                 self.arquivoSaida.close()
                 self.geraGrafico()
             elif self.ec:
@@ -200,6 +207,8 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                                             str(self.resultado[i]) + "\n")
                     self.textBrowser.append(str(self.volume[i]) + "       " + str(self.energia[i]) + "        " +
                                             str(self.resultado[i]) + "\n")
+                self.textBrowser.append("\nFORMULA:  " + formula)
+                self.arquivoSaida.write("\nFORMULA:  " + formula)
                 self.arquivoSaida.close()
                 self.geraGrafico()
         except:
@@ -235,6 +244,7 @@ class MainUIClass(QtGui.QMainWindow, Interface.Ui_MainWindow):
                 plt.scatter(self.volume, self.resultado, color='r')
                 plt.show()
                 return
+
 
     '''
             Método para reiniciar as entryboxes e as listas de atomos e numero deles.
